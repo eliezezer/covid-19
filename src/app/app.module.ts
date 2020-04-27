@@ -6,6 +6,25 @@ import { ComponenteLoginComponent } from './componente-login/componente-login.co
 import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
 import { ListaPersonasComponent } from './lista-personas/lista-personas.component';
 
+import {RouterModule, Routes} from '@angular/router';
+
+const rutas: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'Home'
+  },
+  {
+    path: 'Home',
+    component: ComponenteLoginComponent
+  },
+  {
+    path: 'Personas',
+    component: ListaPersonasComponent
+  }
+]
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +33,11 @@ import { ListaPersonasComponent } from './lista-personas/lista-personas.componen
     ListaPersonasComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(rutas, {
+      enableTracing: true,
+      useHash: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

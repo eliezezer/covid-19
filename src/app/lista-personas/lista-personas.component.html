@@ -7,7 +7,23 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-  </nav>
-  <ul >
-    <li class="list-group-item list-group-item-secondary" *ngFor="let persona of personas" > {{ persona }}</li>
-</ul>
+</nav>
+
+<div class="container col-md-7 pt-4">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>N°</th>
+        <th>Nombre</th>
+        <th>Lugar</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ul class="list-group justify-content-center">
+        <li class="list-group-item" *ngFor="let persona of personas" > {{ persona }}</li>
+    </ul>
+    </tbody>
+  </table>
+</div>
+
